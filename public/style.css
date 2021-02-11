@@ -1,0 +1,499 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: var(--bg-color-light);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    /* background colors */
+    --header-bg-color: #0a0a0a;
+    --bg-color-light: #f2f2f2;
+    --bg-color-dark: #333333;
+    --bg-color-darker: #1d1d1d;
+    /* text colors */
+    --header-color: #cecece;
+    --text-color-dark: #1d1d1d;
+    --text-color-darker: #000000;
+    --text-color-light: #f2f2f2;
+    /* accent colors */
+    --accent-color: #0071E3;
+}
+
+/* Header */
+
+header {
+    background-color: var(--header-bg-color);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 70%;
+}
+
+header h1 {
+    font-weight: 400;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+.hamburger {
+    display: none;
+}
+
+.hamburger-selected {
+    background-color: rgba(0, 0, 0, .95);
+    height: 100vh;
+    width: 0%;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    transition: .5s;
+}
+
+.show {
+    width: 100%;
+}
+
+.hamburger-item {
+    font-size: 2rem;
+    margin: 1em 0;
+    transition: color .5s;
+}
+
+.hamburger-item:hover, .hamburger-item:focus {
+    color: var(--accent-color)
+}
+
+header li {
+    min-width: 8rem;
+    text-align: center;
+    list-style: none;
+}
+
+header a {
+    text-decoration: none;
+    color: var(--header-color)
+}
+
+header li:last-child {
+    text-align: right;
+    min-width: 5rem;
+}
+
+/* Home */
+
+.container {
+    max-width: 70vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color-dark);
+}
+
+.home-header {
+    font-size: 3.5rem;
+    margin-bottom: 0;
+}
+
+.home-tagline {
+    margin: 0 0 .25em;
+    font-weight: 400;
+    font-size: 2rem;
+    color: var(--accent-color);
+    text-align: right;
+}
+
+.home-images-container {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-image {
+    width: 30%;
+    height: 275px;
+    object-fit: cover;
+    box-shadow: 2px 2px 6px;
+}
+
+.directions-header {
+    font-size: 2rem;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+.steps {
+    list-style: none;
+    font-weight: 400;
+    padding-left: 4em;
+    font-size: 1.75rem;
+    line-height: 1.75em;
+}
+
+span {
+    font-weight: 700;
+}
+
+.view-tickets {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    color: var(--accent-color);
+    font-size: 2rem;
+}
+
+.view-tickets p {
+    margin-left: .5em;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: .125rem;
+}
+
+/* Winners Section */
+
+.winner-container {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-light)
+}
+
+.winner-header, .winner-date, form {
+    text-align: center;
+    margin: 0;
+}
+
+.winner-header {
+    font-size: 3.5rem;
+    color: var(--text-color-light);
+    padding: .125em;
+}
+
+.winner-date {
+    color: var(--accent-color);
+    font-weight: 400;
+    font-size: 1.5rem;
+    letter-spacing: .25rem;
+}
+
+form, button, input, #results {
+    font-size: 1.5rem;
+    margin: .5em .125em;
+}
+
+button {
+    padding: .25em 1em;
+    border-radius: 2em;
+    border: none;
+    background-color: var(--accent-color);
+    color: var(--text-color-light);
+    cursor: pointer;
+}
+#results {
+    text-align: center;
+    margin: 0;
+}
+
+#results:empty {
+    height: 2rem;
+}
+
+.winning-ticket, #results {
+    color: red;
+}
+
+.winner__item-container {
+    background-color: var(--bg-color-darker);
+    box-shadow: 1px 1px 4px #666666;
+}
+
+.winner__item-header {
+    color: var(--accent-color);
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0;
+}
+
+.this-week-winning-tickets-container {
+    max-width: 70%;
+    margin: 0 auto;
+    padding-bottom: 2em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 2em;
+    column-gap: 2em;
+}
+
+.winner__item-tickets {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.winner__none {
+    grid-column: 1 / 3;
+    text-align: center;
+}
+
+.ticket {
+    text-align: center;
+}
+
+/* Footer */
+
+footer {
+    background-color: var(--bg-color-dark);
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+footer a {
+    z-index: 2;
+    text-decoration: none;
+    color: var(--accent-color);
+    font-size: 1.25rem;
+    padding: 1em;
+    transition: color 1s;
+}
+
+footer a:hover {
+    color: var(--text-color-light);
+}
+
+.left-gradient {
+    height: 100%;
+    width: 40%;
+    background-image: linear-gradient(to right, var(--header-bg-color), var(--bg-color-dark));
+    position: absolute;
+    left: 0;
+}
+
+.right-gradient {
+    height: 100%;
+    width: 40%;
+    background-image: linear-gradient(to left, var(--header-bg-color), var(--bg-color-dark));
+    position: absolute;
+    right: 0;
+}
+
+/* 1st media query */
+
+@media (max-width: 1120px) {
+    /* Home Section */
+    .home-header, .winner-header {
+        font-size: 3rem;
+    }
+    .home-tagline, .winner-date {
+        font-size: 1.5rem;
+    }
+    .directions-header {
+        font-size: 1.75rem;
+    }
+    .steps {
+        font-size: 1.5rem;
+    }
+    /* Winners Section */
+
+    .ticket {
+        font-size: .8rem;
+    }
+}
+
+@media (max-width: 958px) {
+    .steps {
+        padding-left: 2em;
+    }
+    .view-tickets p {
+        font-size: 1.7rem;
+    }
+    
+    /* Winner Stuff */
+    .this-week-winning-tickets-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 840px) {
+    /* Font Sizing */
+    .home-header, .winner-header {
+        font-size: 2.5rem;
+    }
+    .home-tagline, .winner-date, form, button, input, #results {
+        font-size: 1.25rem;
+    }
+    .directions-header {
+        font-size: 1.5rem;
+    }
+    .steps {
+        font-size: 1.25rem;
+    }
+    .view-tickets p {
+        font-size: 1.5rem;
+    }
+    /* Nav Stuff */
+    .nav {
+        display: none;
+    }
+    .hamburger {
+        z-index: 3;
+        width: 2.5em;
+        height: 1.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        position: relative;
+    }
+    .bar {
+        background-color: var(--header-color);
+        width: 100%;
+        height: .2em;
+    }
+    .top {
+        position: absolute;
+        transition: .5s;
+    }
+    .top.x {
+        transform: rotate(-315deg) translateX(37%);
+    }
+    .middle {
+        position: absolute;
+        bottom: calc(50% - .125em);
+        opacity: 1;
+        transition: .5s;
+    }
+    .middle.x {
+        opacity: 0;
+    }
+    .bottom {
+        position: absolute;
+        bottom: 0;
+        transition: .5s;
+    }
+    .bottom.x {
+        bottom: 0px;
+        transform: rotate(315deg) translateX(37%);
+    }
+    /* image slider */
+    .home-image {
+        opacity: 0;
+        width: 0%;
+        transition: 1s;
+    }
+    .home-image.selected {
+        opacity: 1;
+        width: 100%;
+    }
+    .container, .header, .this-week-winning-tickets-container {
+        max-width: 80vw;
+    }
+
+}
+
+@media (max-width: 613px) {
+    /* Font Sizing */
+    .home-header, .winner-header {
+        font-size: 2rem;
+    }
+    .home-tagline, .winner-date, form, button, input, #results {
+        font-size: 1rem;
+    }
+    .directions-header {
+        font-size: 1.5rem;
+    }
+    .steps {
+        font-size: 1rem;
+    }
+    .view-tickets p {
+        font-size: 1.125rem;
+    }
+
+    /* Winner Section */
+
+    .winner-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .this-week-winning-tickets-container {
+        grid-template-columns: 100%;
+        width: 80%;
+    }
+
+    .this-week-winning-tickets-container {
+        order: 2;
+    }
+
+    #results {
+        order: 1;
+    }
+}
+
+@media (max-width: 490px) {
+    .container, .header, .this-week-winning-tickets-container {
+        max-width: 85vw;
+        min-width: 85%;
+    }
+
+    /* Font Sizing */
+    .home-header, .winner-header {
+        font-size: 1.75rem;
+    }
+    .home-tagline, .winner-date, form, button, input, #results {
+        font-size: .9rem;
+    }
+    .directions-header {
+        font-size: 1.5rem;
+    }
+    .steps {
+        padding-left: 0.75em;
+        font-size: .9rem;
+    }
+    .view-tickets p {
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 462px) {
+    .container, .header, .this-week-winning-tickets-container {
+        max-width: 90vw;
+        min-width: 90%;
+    }
+    /* Font Sizing */
+    .home-header, .winner-header {
+        font-size: 1.5rem;
+    }
+    .home-tagline, .winner-date {
+        font-size: .8rem;
+    }
+    .directions-header {
+        font-size: 1.25rem;
+    }
+    .steps {
+        padding-left: 0.5em;
+        font-size: .8rem;
+    }
+    .view-tickets p {
+        font-size: .8rem;
+    }
+}
