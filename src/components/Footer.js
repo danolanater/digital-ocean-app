@@ -4,6 +4,7 @@ function Footer() {
             <div className="left-gradient"/>
             <div className="right-gradient"/>
             <a href="https://www.instagram.com/danolanater/">Site by Danolanater</a>
+            <a href="https://www.instagram.com/wallykaly/">Vali</a>
         </footer>
     )
 }
