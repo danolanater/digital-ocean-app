@@ -32,7 +32,7 @@ function Winners() {
     return (
         <div className="winner-container" id="winners">
             <h1 className="winner-header">This Weeks Winners</h1>
-            <h3 className="winner-date">March 22, 2021</h3>
+            <h3 className="winner-date">March 29, 2021</h3>
             <form onSubmit={handleSubmit}>
                 <label>Search Ticket Number: </label>
                 <input name="ticketNumber" type="number" placeholder="######" min="100000" max="999999"></input>
