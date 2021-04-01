@@ -29,6 +29,17 @@ function Header() {
                 <a className="hamburger-item" href="#winners" onClick={hamburgerClicked}>Winning Tickets</a>
                 <a className="hamburger-item" href="#about" onClick={hamburgerClicked}>About</a>
             </div>
+        <!-- google tracking code-->
+                            <!-- Global site tag (gtag.js) - Google Analytics -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGEFE6VX1P"></script>
+                <script>
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+
+                  gtag('config', 'G-ZGEFE6VX1P');
+                </script>
+
         </header>
     )
 }
